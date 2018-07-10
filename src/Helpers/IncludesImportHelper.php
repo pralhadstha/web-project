@@ -6,6 +6,5 @@ class IncludesImportHelper
 {
     public function __construct()
     {
-
     }
 }

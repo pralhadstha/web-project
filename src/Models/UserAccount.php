@@ -18,7 +18,7 @@ class UserAccount extends BaseModel
      */
     protected $columns = [
         'username', 'password', 'email', 'account_name', 'address', 'mobile_number',
-        'users_ip', 'active', 'verification_code'
+        'users_ip', 'active', 'verification_code',
     ];
 
     /**

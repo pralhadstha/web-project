@@ -1,4 +1,5 @@
 <?php
+
 use App\Helpers\DirectoryHelper;
 
 require '../src/start.php';
@@ -15,4 +16,3 @@ if (isset($_GET['trans'])) {
     $transactionId = $_GET['trans'];
     echo $transactions->verifyTransaction($transactionId);
 }
-?>

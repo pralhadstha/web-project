@@ -22,6 +22,7 @@ class SessionHelper
         session_start();
         $_SESSION = array_merge($_SESSION, $data);
         session_write_close();
+
         return true;
     }
 
@@ -36,7 +37,7 @@ class SessionHelper
      */
     public function setSessionTimeOut()
     {
-       return $_SESSION['timeout'] = time();
+        return $_SESSION['timeout'] = time();
     }
 
     /**

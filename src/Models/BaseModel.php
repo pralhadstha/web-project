@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Functions\Database;
-use PDO;
 
 /**
  * Class BaseModel
@@ -47,6 +46,7 @@ class BaseModel
     {
         $columnValueArray = $this->columnValuePair($property);
         $query = $this->insertQuery($columnValueArray['column'], $columnValueArray['attributes']);
+
         return $this->executeQuery($query);
     }
 
@@ -59,6 +59,7 @@ class BaseModel
     {
         $columnValueArray = $this->columnValuePair($parameters, false);
         $query = $this->updateQuery($columnValueArray['attributes'], $clause);
+
         return $this->executeQuery($query);
     }
 
@@ -70,9 +71,10 @@ class BaseModel
      * @param null $clause
      * @return mixed
      */
-    public function deleteWhere($column, $operator, $value , $single = false, $clause = null)
+    public function deleteWhere($column, $operator, $value, $single = false, $clause = null)
     {
-        $query = $this->deleteQuery($column, "'".$value."'", $operator, $single, $clause);
+        $query = $this->deleteQuery($column, "'" . $value . "'", $operator, $single, $clause);
+
         return $this->executeQuery($query);
     }
 
@@ -89,6 +91,7 @@ class BaseModel
         array_unshift($columns, "{$this->primaryKey}");
         $columns = $this->getColumn($columns);
         $query = $this->selectQuery($columns, $clause);
+
         return $this->fetchAll($query);
     }
 
@@ -127,6 +130,7 @@ class BaseModel
     {
         $result = $this->prepare($query);
         $this->execute($result);
+
         return $result->fetchAll();
     }
 
@@ -139,6 +143,7 @@ class BaseModel
         if (!$columns) {
             $columns = $this->columns;
         }
+
         return $this->separateValueGenerator($columns, ',');
     }
 
@@ -153,6 +158,7 @@ class BaseModel
         if ($addQuote) {
             return "'" . $this->separateValueGenerator($sortedArray) . "'";
         }
+
         return $this->separateValueGenerator($sortedArray, ',');
     }
 
@@ -166,6 +172,7 @@ class BaseModel
         foreach ($dataArray as $key => $value) {
             $returnArray[$key] = $dataArray[$key];
         }
+
         return $returnArray;
     }
 
@@ -195,7 +202,7 @@ class BaseModel
 
         return [
             'column' => $column,
-            'attributes' => $attributes
+            'attributes' => $attributes,
         ];
     }
 
@@ -233,6 +240,7 @@ class BaseModel
         if ($single) {
             return $query . "{$clause}";
         }
+
         return $query . "{$column} {$operator} {$value}";
     }
 

@@ -20,31 +20,31 @@ if (isset($_SESSION)) {
         $message = $_SESSION['message'];
         unset($_SESSION['message']);
     }
-    if(isset($_SESSION['transactionTypeError'])) {
+    if (isset($_SESSION['transactionTypeError'])) {
         $transactionTypeError = $_SESSION['transactionTypeError'];
         unset($_SESSION['transactionTypeError']);
     }
-    if(isset($_SESSION['chequeNumberError'])) {
+    if (isset($_SESSION['chequeNumberError'])) {
         $chequeNumberError = $_SESSION['chequeNumberError'];
         unset($_SESSION['chequeNumberError']);
     }
-    if(isset($_SESSION['amountError'])) {
+    if (isset($_SESSION['amountError'])) {
         $amountError = $_SESSION['amountError'];
         unset($_SESSION['amountError']);
     }
-    if(isset($_SESSION['transactionType'])) {
+    if (isset($_SESSION['transactionType'])) {
         $transactionType = $_SESSION['transactionType'];
         unset($_SESSION['transactionType']);
     }
-    if(isset($_SESSION['chequeNumber'])) {
+    if (isset($_SESSION['chequeNumber'])) {
         $chequeNumber = $_SESSION['chequeNumber'];
         unset($_SESSION['chequeNumber']);
     }
-    if(isset($_SESSION['amount'])) {
+    if (isset($_SESSION['amount'])) {
         $amount = $_SESSION['amount'];
         unset($_SESSION['amount']);
     }
-    if(isset($_SESSION['usrHash'])) {
+    if (isset($_SESSION['usrHash'])) {
         $userId = $_SESSION['usrHash'];
     }
 }

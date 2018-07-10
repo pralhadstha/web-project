@@ -41,9 +41,7 @@ class Database
         try {
             $this->connection = new PDO("mysql:host={$dbDetails['host']};dbname={$dbDetails['database']}", $dbDetails['username'], $dbDetails['password']);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }
-        catch(PDOException $e)
-        {
+        } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
     }
@@ -57,6 +55,7 @@ class Database
         if (!$this->connection) {
             $this->init();
         }
+
         return $this->connection->exec($query);
     }
 

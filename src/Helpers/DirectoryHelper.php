@@ -2,7 +2,6 @@
 
 namespace App\Helpers;
 
-
 /**
  * Class DirectoryHelper
  * @package App\Helpers
@@ -34,11 +33,12 @@ class DirectoryHelper
 
         return $config['url'];
     }
+
     /**
      * @return string
      */
     public static function getPublicPath()
     {
-        return self::getDomainRoot(). 'public/';
+        return self::getDomainRoot() . 'public/';
     }
 }

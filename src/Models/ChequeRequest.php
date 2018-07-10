@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-
 /**
  * Class ChequeRequest
  * @package App\Models

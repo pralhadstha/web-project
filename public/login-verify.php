@@ -29,16 +29,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'verifiedLogin' => false,
         ];
         SessionHelper::setSessionData($response);
+
         return header("Location: {$_SERVER["HTTP_REFERER"]}");
     } else {
         $user->update([
-            "verification_code = ''"
+            "verification_code = ''",
         ], "account_no = '{$id}'");
         $response = [
             'verifiedLogin' => true,
         ];
         $redirect = DirectoryHelper::getPublicPath() . "dashboard.php";
         SessionHelper::setSessionData($response);
+
         return header("Location: {$redirect}");
     }
 }

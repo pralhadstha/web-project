@@ -74,6 +74,7 @@ class RegisterController extends BaseController
                 $error = array_merge($this->formErrors, $this->formItems);
             }
             SessionHelper::setSessionData($error);
+
             return header("Location: {$server["HTTP_REFERER"]}");
         } else {
             $user = new UserAccount();
@@ -102,6 +103,7 @@ class RegisterController extends BaseController
             }
             SessionHelper::setSessionData($response);
             $redirect = DirectoryHelper::getPublicPath() . "login.php";
+
             return header("Location: {$redirect}");
         }
     }

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-
 /**
  * Class StatementRequest
  * @package App\Models

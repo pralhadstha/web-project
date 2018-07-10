@@ -14,6 +14,6 @@ class ConfigHelper
      */
     public static function config($filename)
     {
-        return DirectoryHelper::getRoot(). 'src/config/'. $filename;
+        return DirectoryHelper::getRoot() . 'src/config/' . $filename;
     }
 }

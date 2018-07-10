@@ -17,15 +17,15 @@ if (isset($_SESSION)) {
         $message = $_SESSION['message'];
         unset($_SESSION['message']);
     }
-    if(isset($_SESSION['usernameError'])) {
+    if (isset($_SESSION['usernameError'])) {
         $usernameError = $_SESSION['usernameError'];
         unset($_SESSION['usernameError']);
     }
-    if(isset($_SESSION['nameError'])) {
+    if (isset($_SESSION['nameError'])) {
         $nameError = $_SESSION['nameError'];
         unset($_SESSION['nameError']);
     }
-    if(isset($_SESSION['emailError'])) {
+    if (isset($_SESSION['emailError'])) {
         $emailError = $_SESSION['emailError'];
         unset($_SESSION['emailError']);
     }
@@ -45,23 +45,23 @@ if (isset($_SESSION)) {
         $addressError = $_SESSION['$addressError'];
         unset($_SESSION['$addressError']);
     }
-    if(isset($_SESSION['username'])) {
+    if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
         unset($_SESSION['username']);
     }
-    if(isset($_SESSION['name'])) {
+    if (isset($_SESSION['name'])) {
         $name = $_SESSION['name'];
         unset($_SESSION['name']);
     }
-    if(isset($_SESSION['email'])) {
+    if (isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
         unset($_SESSION['email']);
     }
-    if(isset($_SESSION['address'])) {
+    if (isset($_SESSION['address'])) {
         $address = $_SESSION['address'];
         unset($_SESSION['address']);
     }
-    if(isset($_SESSION['phone'])) {
+    if (isset($_SESSION['phone'])) {
         $phone = $_SESSION['phone'];
         unset($_SESSION['phone']);
     }

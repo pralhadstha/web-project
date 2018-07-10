@@ -2,7 +2,6 @@
 
 namespace App\Helpers;
 
-
 use App\Models\UserAccount;
 
 /**
@@ -23,6 +22,7 @@ class UserHelper
 
         $user = new UserAccount();
         $usersInfo = $user->selectWhere("account_no = '{$userId}'");
+
         return $user->first($usersInfo);
     }
 
@@ -32,6 +32,7 @@ class UserHelper
     public static function getAllUsers()
     {
         $users = new UserAccount();
+
         return $users->all();
     }
 }

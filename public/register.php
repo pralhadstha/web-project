@@ -5,20 +5,20 @@ require '../src/start.php';
 include('includes/header.php');
 session_start();
 $nameError = $emailError = $passwordError = $confirmPasswordError = $phoneError = null;
-if(isset($_SESSION)) {
-    if(isset($_SESSION['verifiedLogin'])) {
-        $redirect = DirectoryHelper::getPublicPath()."dashboard.php";
+if (isset($_SESSION)) {
+    if (isset($_SESSION['verifiedLogin'])) {
+        $redirect = DirectoryHelper::getPublicPath() . "dashboard.php";
         header("Location: {$redirect}");
     }
-    if(isset($_SESSION['usernameError'])) {
+    if (isset($_SESSION['usernameError'])) {
         $usernameError = $_SESSION['usernameError'];
         unset($_SESSION['usernameError']);
     }
-    if(isset($_SESSION['nameError'])) {
+    if (isset($_SESSION['nameError'])) {
         $nameError = $_SESSION['nameError'];
         unset($_SESSION['nameError']);
     }
-    if(isset($_SESSION['emailError'])) {
+    if (isset($_SESSION['emailError'])) {
         $emailError = $_SESSION['emailError'];
         unset($_SESSION['emailError']);
     }
@@ -34,19 +34,19 @@ if(isset($_SESSION)) {
         $phoneError = $_SESSION['phoneError'];
         unset($_SESSION['phoneError']);
     }
-    if(isset($_SESSION['username'])) {
+    if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
         unset($_SESSION['username']);
     }
-    if(isset($_SESSION['name'])) {
+    if (isset($_SESSION['name'])) {
         $name = $_SESSION['name'];
         unset($_SESSION['name']);
     }
-    if(isset($_SESSION['email'])) {
+    if (isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
         unset($_SESSION['email']);
     }
-    if(isset($_SESSION['phone'])) {
+    if (isset($_SESSION['phone'])) {
         $phone = $_SESSION['phone'];
         unset($_SESSION['phone']);
     }

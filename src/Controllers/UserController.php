@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-
 use App\Helpers\DirectoryHelper;
 use App\Helpers\PasswordHelper;
 use App\Helpers\SessionHelper;
@@ -79,6 +78,7 @@ class UserController extends BaseController
                     $error = array_merge($this->formErrors, $this->formItems);
                 }
                 SessionHelper::setSessionData($error);
+
                 return header("Location: {$server["HTTP_REFERER"]}");
             } else {
                 $user = new UserAccount();
@@ -107,6 +107,7 @@ class UserController extends BaseController
                 }
                 SessionHelper::setSessionData($response);
                 $redirect = DirectoryHelper::getPublicPath() . "users.php";
+
                 return header("Location: {$redirect}");
             }
         }
@@ -174,6 +175,7 @@ class UserController extends BaseController
                     $error = array_merge($this->formErrors, $this->formItems);
                 }
                 SessionHelper::setSessionData($error);
+
                 return header("Location: {$server["HTTP_REFERER"]}");
             } else {
                 $user = new UserAccount();

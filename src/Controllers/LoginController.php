@@ -67,6 +67,7 @@ class LoginController
                         'verifiedLogin' => true,
                     ];
                     SessionHelper::setSessionData($response);
+
                     return header("Location: {$redirect}");
                 }
                 $response = [
@@ -89,6 +90,7 @@ class LoginController
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
+
         return $data;
     }
 }

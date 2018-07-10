@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-
 use App\Helpers\DirectoryHelper;
 use App\Helpers\SessionHelper;
 use App\Helpers\TransactionHelper;
@@ -47,6 +46,7 @@ class TransactionController extends BaseController
                     $error = array_merge($this->formErrors, $this->formItems);
                 }
                 SessionHelper::setSessionData($error);
+
                 return header("Location: {$server["HTTP_REFERER"]}");
             } else {
                 $code = '';
@@ -69,7 +69,8 @@ class TransactionController extends BaseController
                 if ($result) {
                     if (!empty($code)) {
                         $transactionResult = $transaction->selectWhere(
-                            "account_no = '{$data['userId']}' AND transaction_type = '{$this->formItems['transactionType']}' AND cheque_no = '{$this->formItems['chequeNumber']}' AND verification_code = '{$code}'");
+                            "account_no = '{$data['userId']}' AND transaction_type = '{$this->formItems['transactionType']}' AND cheque_no = '{$this->formItems['chequeNumber']}' AND verification_code = '{$code}'"
+                        );
                         $trans = $transaction->first($transactionResult);
                         $redirect = DirectoryHelper::getPublicPath() . "transactions.php";
                     }
@@ -120,6 +121,7 @@ class TransactionController extends BaseController
                     $error = array_merge($this->formErrors, $this->formItems);
                 }
                 SessionHelper::setSessionData($error);
+
                 return header("Location: {$server["HTTP_REFERER"]}");
             } else {
                 $code = '';
@@ -142,7 +144,8 @@ class TransactionController extends BaseController
                 if ($result) {
                     if (!empty($code)) {
                         $transactionResult = $transaction->selectWhere(
-                            "account_no = '{$data['userId']}' AND transaction_type = '{$this->formItems['transactionType']}' AND cheque_no = '{$this->formItems['chequeNumber']}' AND verification_code = '{$code}'");
+                            "account_no = '{$data['userId']}' AND transaction_type = '{$this->formItems['transactionType']}' AND cheque_no = '{$this->formItems['chequeNumber']}' AND verification_code = '{$code}'"
+                        );
                         $trans = $transaction->first($transactionResult);
                         $redirect = DirectoryHelper::getPublicPath() . "transaction.php";
                     }
@@ -157,6 +160,7 @@ class TransactionController extends BaseController
                     ];
                 }
                 SessionHelper::setSessionData($response);
+
                 return header("Location: {$redirect}");
             }
         }
@@ -171,6 +175,7 @@ class TransactionController extends BaseController
         if (isset($transactionId)) {
             $transaction = new DepositeWithdraw();
             $transactionInfo = $transaction->selectWhere("transaction_id = '{$transactionId}'");
+
             return $transaction->first($transactionInfo);
         }
     }
@@ -183,6 +188,7 @@ class TransactionController extends BaseController
     {
         if (isset($transactionId)) {
             $transaction = new DepositeWithdraw();
+
             return $transaction->deleteWhere("transaction_id", '=', $transactionId);
         }
     }
@@ -209,6 +215,7 @@ class TransactionController extends BaseController
                     'message' => "There was error updating Withdraw.",
                 ];
             }
+
             return json_encode($response);
         }
     }

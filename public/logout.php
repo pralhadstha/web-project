@@ -1,10 +1,11 @@
 <?php
+
 use App\Helpers\DirectoryHelper;
 use App\Helpers\SessionHelper;
 
 require '../src/start.php';
 session_start();
-if(isset($_SESSION)) {
+if (isset($_SESSION)) {
     if (isset($_SESSION['verifiedLogin'])) {
         $response = [
             'type' => 'success',
@@ -13,7 +14,7 @@ if(isset($_SESSION)) {
             'rememberSession' => null,
         ];
         SessionHelper::setSessionData($response);
-        $redirect = DirectoryHelper::getPublicPath()."login.php";
+        $redirect = DirectoryHelper::getPublicPath() . "login.php";
         header("Location: {$redirect}");
     }
 }
