@@ -2,5 +2,5 @@
 
 return [
     'name' => 'Banking System',
-    'url' => 'http://localhost/banking-system/',
+    'url' => 'http://localhost/web-project/',
 ];
